@@ -6,6 +6,14 @@
 ## Description
 _takes in weather prediction data for a user input location from public weather APIs and displays them side by side, or display an average of all predictions for the given location_
 
+## Setup
+* clone from github
+* open in Android Studio
+* run 'app'; this should prompt you to create an emulated Android device if you don't have one already.
+    * Configure the device and it should start as soon as the emulator is finished booting up.
+    * this app was written and tested on an emulated Samsung Nexus 6, running Android 6.0 Marshmallow
+    
+
 ## Planned Features/ToDo List
 * main page to display all results
     * top/first screen shows average of all results, scroll down for simplified results from individual sources
