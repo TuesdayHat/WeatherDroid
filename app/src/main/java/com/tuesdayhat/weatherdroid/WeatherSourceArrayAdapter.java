@@ -5,7 +5,7 @@ import android.widget.ArrayAdapter;
 
 public class WeatherSourceArrayAdapter extends ArrayAdapter {
     private Context mContext;
-    private Object[] mWeatherModels;
+    private String[] mWeatherModels;
 
     public WeatherSourceArrayAdapter (Context mContext, int resource, String[] mWeatherModels){
         super(mContext, resource);
@@ -15,7 +15,7 @@ public class WeatherSourceArrayAdapter extends ArrayAdapter {
 
     @Override
     public Object getItem(int position){
-        Object model = mWeatherModels[position];
+        String model = mWeatherModels[position];
         return String.format("Source: %s", model.toString());
     }
 

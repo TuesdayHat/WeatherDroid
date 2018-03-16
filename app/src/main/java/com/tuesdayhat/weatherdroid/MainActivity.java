@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ButterKnife.bind(this);
 
         mAboutButton.setOnClickListener(this);
+        mWeatherButton.setOnClickListener(this);
     }
 
     @Override
