@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">WeatherDroid</string>
+    <string name="user_location">The Weather In </string>
 </resources>
