@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">WeatherDroid</string>
     <string name="user_location">The Weather In </string>
+    <string name="about_content">
+        This app is meant to be an easy way to view the weather forecast from multiple sources at once, allowing the user to compare for accuracy, or just get a second opinion on whether they should bring an umbrella today.
+        \n\n contact Adam Calhoun with questions, comments and bug reports at a.t.calhoun@gmail.com
+    </string>
 </resources>
