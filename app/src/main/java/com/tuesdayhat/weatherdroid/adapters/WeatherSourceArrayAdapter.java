@@ -1,4 +1,4 @@
-package com.tuesdayhat.weatherdroid;
+package com.tuesdayhat.weatherdroid.adapters;
 
 import android.content.Context;
 import android.widget.ArrayAdapter;

@@ -1,4 +1,4 @@
-package com.tuesdayhat.weatherdroid;
+package com.tuesdayhat.weatherdroid.ui;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +8,9 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.tuesdayhat.weatherdroid.R;
+import com.tuesdayhat.weatherdroid.adapters.WeatherSourceArrayAdapter;
 
 import butterknife.ButterKnife;
 import butterknife.BindView;
