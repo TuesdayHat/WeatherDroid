@@ -38,9 +38,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v == mWeatherButton){
             String location = mWeatherLocationInput.getText().toString();
-            Intent intent = new Intent(MainActivity.this, SourceDetails.class);
-            intent.putExtra("location", location);
-            startActivity(intent);
+
+            if (location.length() > 0){
+                Intent intent = new Intent(MainActivity.this, SourceDetails.class);
+                intent.putExtra("location", location);
+                startActivity(intent);
+            }
+
         }
     }
 }
