@@ -43,6 +43,26 @@ public class OpenWeatherMapService {
             String jsonData = response.body().string();
             JSONObject openWatherMapJSON = new JSONObject(jsonData);
 
+            String summary = openWatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("main");
+            String description = openWatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("description");
+            String location = openWatherMapJSON.getString("name") + ", " + openWatherMapJSON.getJSONObject("sys").getString("country");
+            Double temp = openWatherMapJSON.getJSONObject("main").getDouble("temp");
+            Double max = openWatherMapJSON.getJSONObject("main").getDouble("temp_max");
+            Double min = openWatherMapJSON.getJSONObject("main").getDouble("temp_min");
+            Double humidity = openWatherMapJSON.getJSONObject("main").getDouble("humidity");
+
+            WeatherSource weatherSource = new WeatherSource.Builder()
+                    .sourceName("Open Weather Map")
+                    .summary(summary)
+                    .description(description)
+                    .location(location)
+                    .currTemp(temp)
+                    .currMax(max)
+                    .currMin(min)
+                    .currHumidity(humidity)
+                    .build();
+
+            weatherSources.add(weatherSource);
         }
         catch (IOException e){
             e.printStackTrace();
