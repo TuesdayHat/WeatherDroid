@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
+import com.tuesdayhat.weatherdroid.ui.WeatherSourceDetailFragment;
 
 import java.util.ArrayList;
 
