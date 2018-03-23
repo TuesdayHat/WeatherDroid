@@ -9,12 +9,20 @@ _takes in weather prediction data for a user input location from public weather 
 ## Setup
 * clone from github
 * open in Android Studio
+* create gradle.properties
 * run 'app'; this should prompt you to create an emulated Android device if you don't have one already.
     * Configure the device and it should start as soon as the emulator is finished booting up.
     * this app was written and tested on an emulated Samsung Nexus 6, running Android 6.0 Marshmallow
     
 
 ## Planned Features/ToDo List
+
+* Plan for UI:
+    * Input Location => show current temp, list of all sources
+    * >> tap a source => bring up details for tapped source (hourly forecast if available)
+        * scroll down for 5 day forecast
+        * swipe left/right for other sources
+
 * main page to display all results
     * top/first screen shows average of all results, scroll down for simplified results from individual sources
     * click/navigate to individual pages for sources, see detailed information from that source, short description of how that model works/what's different about it
