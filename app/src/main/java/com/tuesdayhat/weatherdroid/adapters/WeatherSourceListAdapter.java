@@ -1,9 +1,10 @@
 package com.tuesdayhat.weatherdroid.adapters;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.widget.ArrayAdapter;
 
-public class WeatherSourceListAdapter extends ArrayAdapter {
+public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSourceListAdapter.WeatherSourceListAdapter.WeatherSourceViewHolder> {
     private Context mContext;
     private String[] mWeatherModels;
 

@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String location = mWeatherLocationInput.getText().toString();
 
             if (location.length() > 0){
-                Intent intent = new Intent(MainActivity.this, SourceDetail.class);
+                Intent intent = new Intent(MainActivity.this, SourceList.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
             }
