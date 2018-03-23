@@ -26,7 +26,7 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     @BindView(R.id.currMax) TextView mCurrMax;
     @BindView(R.id.currHumidity) TextView mHumidity;
     @BindView(R.id.summary) TextView mSummary;
-    @BindView(R.id.description) TextView mDescription;
+//    @BindView(R.id.description) TextView mDescription; not sure if this is good for anything here
     @BindView(R.id.location) TextView mLocation;
 
     private WeatherSource mWeatherSource;
@@ -42,7 +42,7 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mWeatherSource = Parcels.unwrap(getArguments().getParcelable("weatherSource"))
+        mWeatherSource = Parcels.unwrap(getArguments().getParcelable("weatherSource"));
     }
 
     @Override

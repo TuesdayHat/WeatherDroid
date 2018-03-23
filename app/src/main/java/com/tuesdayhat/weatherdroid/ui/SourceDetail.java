@@ -1,17 +1,10 @@
 package com.tuesdayhat.weatherdroid.ui;
 
-import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.tuesdayhat.weatherdroid.R;
-import com.tuesdayhat.weatherdroid.adapters.WeatherSourceListAdapter;
 import com.tuesdayhat.weatherdroid.adapters.WeatherSourcePagerAdapter;
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
 
@@ -22,7 +15,7 @@ import java.util.ArrayList;
 import butterknife.ButterKnife;
 import butterknife.BindView;
 
-public class SourceDetails extends AppCompatActivity {
+public class SourceDetail extends AppCompatActivity {
     //TODO: convert this to Cardview/RecyclerView based layout.
 
 //    @BindView(R.id.locationTextView) TextView mLocationTextView;
@@ -38,7 +31,7 @@ public class SourceDetails extends AppCompatActivity {
 //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_source_details);
+//        setContentView(R.layout.activity_source_list);
 //
 //        ButterKnife.bind(this);
 //
@@ -49,7 +42,7 @@ public class SourceDetails extends AppCompatActivity {
 //            @Override
 //            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 //                String weather = ((TextView)view).getText().toString();
-//                Toast.makeText(SourceDetails.this, weather, Toast.LENGTH_LONG).show();
+//                Toast.makeText(SourceDetail.this, weather, Toast.LENGTH_LONG).show();
 //            }
 //        });
 //        Intent intent = getIntent();
@@ -64,7 +57,7 @@ public class SourceDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_source_details);
+        setContentView(R.layout.activity_source_list);
         ButterKnife.bind(this);
 
         mWeatherSources = Parcels.unwrap(getIntent().getParcelableExtra("weatherSources"));

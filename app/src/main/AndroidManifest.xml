@@ -23,7 +23,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tuesdayhat.weatherdroid.ui.MainActivity"></meta-data>
         </activity>
-        <activity android:name=".ui.SourceDetails">
+        <activity android:name=".ui.SourceDetail">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.tuesdayhat.weatherdroid.ui.MainActivity"></meta-data>
