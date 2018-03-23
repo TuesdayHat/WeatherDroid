@@ -12,13 +12,19 @@
         android:text="@string/user_location"
         android:id="@+id/locationTextView"/>
 
-    <ListView
+    <!--<ListView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/sourceList"-->
+        <!--android:layout_below="@id/locationTextView"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentEnd="true"-->
+        <!--android:padding="10sp"/>-->
+
+    <android.support.v7.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sourceList"
-        android:layout_below="@id/locationTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:padding="10sp"/>
+        android:layout_marginTop="17sp"
+        android:id="@+id/sourcesRecyclerView"/>
 
 </RelativeLayout>

@@ -45,5 +45,16 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
         mWeatherSource = Parcels.unwrap(getArguments().getParcelable("weatherSource"))
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
+        View view = inflater.inflate(R.layout.fragment_weather_source_detail, container, false);
+        ButterKnife.bind(this, view);
 
+        return view;
+    }
+
+    @Override
+    public void onClick(View v){
+        //undecided whether this should send the user to the weather source's website on its own. Leaving the framework just in case.
+    }
 }

@@ -9,7 +9,10 @@ _takes in weather prediction data for a user input location from public weather 
 ## Setup
 * clone from github
 * open in Android Studio
-* create gradle.properties
+* create a new file called gradle.properties in the project root directory
+    * get yourself an API key from Open Weather Map
+    * in gradle.properties, add ``OpenWeatherMapKey = "YOUR_API_KEY_HERE"``
+    * rebuild (or resync) Gradle
 * run 'app'; this should prompt you to create an emulated Android device if you don't have one already.
     * Configure the device and it should start as soon as the emulator is finished booting up.
     * this app was written and tested on an emulated Samsung Nexus 6, running Android 6.0 Marshmallow
