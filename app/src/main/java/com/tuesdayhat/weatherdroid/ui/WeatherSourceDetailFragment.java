@@ -24,6 +24,7 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     @BindView(R.id.sourceName) TextView mSourceName;
     @BindView(R.id.currTemp) TextView mCurrTemp;
     @BindView(R.id.currMax) TextView mCurrMax;
+    @BindView(R.id.currMin) TextView mCurrMin;
     @BindView(R.id.currHumidity) TextView mHumidity;
     @BindView(R.id.summary) TextView mSummary;
 //    @BindView(R.id.description) TextView mDescription; not sure if this is good for anything here
@@ -49,6 +50,14 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_weather_source_detail, container, false);
         ButterKnife.bind(this, view);
+
+        mSourceName.setText(mWeatherSource.getSourceName());
+        mCurrTemp.setText(mWeatherSource.getCurrTemp().toString());//note that Open Weather Map returns temp in Kelvins
+        mHumidity.setText(mWeatherSource.getCurrHumidity().toString());
+        mCurrMax.setText(mWeatherSource.getCurrMax().toString());
+        mCurrMin.setText(mWeatherSource.getCurrMin().toString());
+        mSummary.setText(mWeatherSource.getSummary());
+        mLocation.setText(mWeatherSource.getLocation());
 
         return view;
     }

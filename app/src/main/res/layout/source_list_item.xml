@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:text="todayMin"
                 android:textColor="@color/colorPrimary"
-                android:id="@+id/todayMinTempTextView"
+                android:id="@+id/currMin"
                 android:layout_below="@+id/currHumidity"
                 android:layout_alignParentLeft="true"/>
         </RelativeLayout>
