@@ -23,7 +23,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
     private ArrayList<WeatherSource> mWeatherModels = new ArrayList<>();
     private Context mContext;
 
-    public WeatherSourceListAdapter(Context mContext, int resource, ArrayList<WeatherSource> mWeatherModels){
+    public WeatherSourceListAdapter(Context mContext, ArrayList<WeatherSource> mWeatherModels){
         this.mContext = mContext;
         this.mWeatherModels = mWeatherModels;
     }
