@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 import butterknife.ButterKnife;
 
-public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSourceListAdapter.WeatherSourceListAdapter.WeatherSourceViewHolder> {
+public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSourceListAdapter.WeatherSourceViewHolder> {
 
     private ArrayList<WeatherSource> mWeatherModels = new ArrayList<>();
     private Context mContext;
@@ -30,7 +30,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
 
     @Override
     public WeatherSourceListAdapter.WeatherSourceViewHolder onCreateViewHolder(ViewGroup parent, int viewtype){
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.source_list_item. parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.source_list_item, parent, false);
         WeatherSourceViewHolder viewHolder = new WeatherSourceViewHolder(view);
         return viewHolder;
     }
@@ -60,7 +60,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
         public void onClick(View v){
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, SourceDetail.class);
-            Intent.putExtra("position", itemPosition);
+            intent.putExtra("position", itemPosition);
             intent.putExtra("sources", Parcels.wrap(mWeatherModels));
             mContext.startActivity(intent);
         }
