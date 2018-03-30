@@ -5,7 +5,6 @@ import android.util.Log;
 import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -33,20 +32,16 @@ public class OpenWeatherMapService {
             Log.d("-=-=-=-=TEST ", test.toString());
         }
 
-//        Log.d("-----TEST ", test.toString()); //this breaks. thinks HttpUrl.parse(any url here) is a null object
-
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder(); // fails here, see test above
-//        HttpUrl.Builder urlBuilder = HttpUrl.parse("api.openweathermap.org/data/2.5/weather?q=").newBuilder();
-
-        urlBuilder.addQueryParameter(Constants.LOCATION_QUERY_PARAMETER, location + ",us");
-        urlBuilder.addQueryParameter(Constants.OPENWEATHERMAP_KEY_QUERY_PARAMETER, Constants.OPENWEATHERMAP_KEY);
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder();
+        urlBuilder.addQueryParameter(Constants.OWM_LOCATION_QUERY_PARAMETER, location + ",us");
+        urlBuilder.addQueryParameter(Constants.OWM_KEY_QUERY_PARAMETER, Constants.OWM_KEY);
         String url = urlBuilder.build().toString();
 
-        Log.d("----------REQUEST URL ", url); // never gets this far
+        Log.d("----------REQUEST URL ", url);
 
         Request request = new Request.Builder()
                 .url(url)
-                .header("Authorization", Constants.OPENWEATHERMAP_KEY)
+                .header("Authorization", Constants.OWM_KEY)
                 .build();
 
         Call call = client.newCall(request);

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
@@ -16,6 +17,7 @@ import org.parceler.Parcels;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSourceListAdapter.WeatherSourceViewHolder> {
@@ -46,6 +48,14 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
     }
 
     public class WeatherSourceViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        @BindView(R.id.currTemp) TextView mCurrTemp;
+        @BindView(R.id.currMax) TextView mCurrMax;
+        @BindView(R.id.currMin) TextView mCurrMin;
+        @BindView(R.id.currHumidity) TextView mCurrHumidity;
+        @BindView(R.id.summary) TextView mSummary;
+        @BindView(R.id.sourceName) TextView mSourceName;
+
+
         private Context mContext;
 
         public WeatherSourceViewHolder(View itemView) {
@@ -67,6 +77,13 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
 
         public void bindSource(WeatherSource source){
             //TODO: work out what needs to go onto every member of the list of weather sources.
+            mSourceName.setText(source.getSourceName());
+            mCurrTemp.setText(String.format("%s °", source.getCurrTemp()));
+            mCurrMax.setText(String.format("%s °", source.getCurrMax()));
+            mCurrMin.setText(String.format("%s °", source.getCurrMin()));
+            mCurrHumidity.setText(String.format("%s", source.getCurrHumidity()));
+            mSummary.setText(source.getSummary());
+
         }
     }
 }

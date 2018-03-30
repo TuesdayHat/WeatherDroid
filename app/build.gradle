@@ -29,7 +29,7 @@ android {
         }
     }
     buildTypes.each {
-        it.buildConfigField 'String', 'OPENWEATHERMAP_KEY', OpenWeatherMapKey
+        it.buildConfigField 'String', 'OWM_KEY', OpenWeatherMapKey
     }
 }
 
