@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "654341350514",
+    "firebase_url": "https://weatherdroid-d66de.firebaseio.com",
+    "project_id": "weatherdroid-d66de",
+    "storage_bucket": "weatherdroid-d66de.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654341350514:android:0a2b772257fc9d03",
+        "android_client_info": {
+          "package_name": "com.tuesdayhat.weatherdroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654341350514-ktku5crhdnq53ionkrrk5so1q1u6qc01.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tuesdayhat.weatherdroid",
+            "certificate_hash": "2c7de7db163d181ea4388c0dcf3e2e02b75b505d"
+          }
+        },
+        {
+          "client_id": "654341350514-dn635mgj9v2co7l90lhdj92reun0lgof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPdXs9wsgrk8I1CD4kPod7LA8U7Vsp3iM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654341350514-dn635mgj9v2co7l90lhdj92reun0lgof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
