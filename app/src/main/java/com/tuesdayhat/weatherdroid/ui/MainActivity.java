@@ -1,6 +1,8 @@
 package com.tuesdayhat.weatherdroid.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -26,6 +28,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private DatabaseReference mLocationHistoryReference;
     private ValueEventListener mLocationHIstoryReferenceListener;
 
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+
     @BindView(R.id.weatherButton) Button mWeatherButton;
     @BindView(R.id.aboutButton) Button mAboutButton;
     @BindView(R.id.weatherLocationInput) EditText mWeatherLocationInput;
@@ -40,8 +45,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         ButterKnife.bind(this);
+
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mEditor = mSharedPreferences.edit();
+
+
+//        mWeatherLocationInput.setText(Constants.PREFERENCES_LOCATION_KEY, null);
 
         mAboutButton.setOnClickListener(this);
         mWeatherButton.setOnClickListener(this);
@@ -56,12 +66,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String location = mWeatherLocationInput.getText().toString();
 
             if (location.length() > 0){
+                addToSharedPreferences(location);
                 Intent intent = new Intent(MainActivity.this, SourceList.class);
                 intent.putExtra("location", location);
-//                Log.d("----------INTENT: ", intent.toString());
                 startActivity(intent);
             }
 
         }
+    }
+
+    private void addToSharedPreferences(String location){
+        mEditor.putString(Constants.PREFERENCES_LOCATION_KEY, location).apply();
     }
 }

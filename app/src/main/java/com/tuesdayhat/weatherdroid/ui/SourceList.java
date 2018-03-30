@@ -1,13 +1,16 @@
 package com.tuesdayhat.weatherdroid.ui;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.adapters.WeatherSourceListAdapter;
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
@@ -29,6 +32,9 @@ public class SourceList extends AppCompatActivity {
     @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.locationTextView) TextView mLocationTextView;
 
+    private SharedPreferences mSharedPreferences;
+    private String mLastLocation;
+
     private WeatherSourceListAdapter mAdapter;
     public ArrayList<WeatherSource> sources = new ArrayList<>();
 
@@ -39,11 +45,19 @@ public class SourceList extends AppCompatActivity {
 
         ButterKnife.bind(this);
 
-        Intent intent = getIntent();
-        String location = intent.getStringExtra("location");
-        mLocationTextView.append(" " + location);
+//        Intent intent = getIntent();
+//        String location = intent.getStringExtra("location");
 
-        getSources(location);
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        mLastLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
+        Log.d("Shared Pref Location: ", mLastLocation + "");
+        if (mLastLocation != null){
+            getSources(mLastLocation);
+        }
+
+        mLocationTextView.append(" " + mLastLocation);
+
+        getSources(mLastLocation);
     }
 
     private void getSources(String location){
