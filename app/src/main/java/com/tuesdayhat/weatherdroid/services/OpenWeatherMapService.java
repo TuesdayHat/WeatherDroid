@@ -1,5 +1,7 @@
 package com.tuesdayhat.weatherdroid.services;
 
+import android.util.Log;
+
 import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.models.WeatherSource;
 
@@ -22,10 +24,25 @@ public class OpenWeatherMapService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OPENWEATHERMAP_BASE_URL).newBuilder();
+        //HttpUrl.parse DEBUGGING ---------------------------
+        String baseUrl = Constants.OWM_BASE_URL;
+        HttpUrl test = HttpUrl.parse(baseUrl);
+        if (test == null){
+            Log.d("-=-=-=-=TEST ", "--------TEST RETURNS NULL");
+        } else {
+            Log.d("-=-=-=-=TEST ", test.toString());
+        }
+
+//        Log.d("-----TEST ", test.toString()); //this breaks. thinks HttpUrl.parse(any url here) is a null object
+
+        HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder(); // fails here, see test above
+//        HttpUrl.Builder urlBuilder = HttpUrl.parse("api.openweathermap.org/data/2.5/weather?q=").newBuilder();
+
         urlBuilder.addQueryParameter(Constants.LOCATION_QUERY_PARAMETER, location);
         urlBuilder.addQueryParameter(Constants.OPENWEATHERMAP_KEY_QUERY_PARAMETER, Constants.OPENWEATHERMAP_KEY);
         String url = urlBuilder.build().toString();
+
+        Log.d("----------REQUEST URL ", url); // never gets this far
 
         Request request = new Request.Builder()
                 .url(url)

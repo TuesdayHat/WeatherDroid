@@ -3,6 +3,7 @@ package com.tuesdayhat.weatherdroid.ui;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if (location.length() > 0){
                 Intent intent = new Intent(MainActivity.this, SourceList.class);
                 intent.putExtra("location", location);
+//                Log.d("----------INTENT: ", intent.toString());
                 startActivity(intent);
             }
 

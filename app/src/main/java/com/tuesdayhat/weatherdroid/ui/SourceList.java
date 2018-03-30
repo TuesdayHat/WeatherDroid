@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.adapters.WeatherSourceListAdapter;
@@ -22,7 +23,9 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SourceList extends AppCompatActivity {
+
     @BindView(R.id.sourcesRecyclerView) RecyclerView mRecyclerView;
+
     private WeatherSourceListAdapter mAdapter;
 
     public ArrayList<WeatherSource> sources = new ArrayList<>();
@@ -36,12 +39,14 @@ public class SourceList extends AppCompatActivity {
 
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
+//        Log.d("----LOCATION EXTRA: ", location);
 
         getSources(location);
     }
 
     private void getSources(String location){
         final OpenWeatherMapService owmService = new OpenWeatherMapService();
+//        Log.d("----LOCATION ", location);
         owmService.currentWeather(location, new Callback(){
 
             @Override
