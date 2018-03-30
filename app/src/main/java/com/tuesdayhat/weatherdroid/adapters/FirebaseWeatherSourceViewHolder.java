@@ -53,7 +53,7 @@ public class FirebaseWeatherSourceViewHolder extends RecyclerView.ViewHolder imp
         final ArrayList<WeatherSource> sources = new ArrayList<>();
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference(Constants.FIREBASE_CHILD_SOURCE);
         ref.addListenerForSingleValueEvent(new ValueEventListener(){
-            
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot){
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {

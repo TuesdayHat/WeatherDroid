@@ -30,6 +30,8 @@ public class SourceDetail extends AppCompatActivity {
 
         mWeatherSources = Parcels.unwrap(getIntent().getParcelableExtra("weatherSources"));
         int startingPosition = getIntent().getIntExtra("position", 0);
+
+        adapterViewPager = new WeatherSourcePagerAdapter(getSupportFragmentManager(), mWeatherSources);
         mViewPager.setAdapter(adapterViewPager);
         mViewPager.setCurrentItem(startingPosition);
     }
