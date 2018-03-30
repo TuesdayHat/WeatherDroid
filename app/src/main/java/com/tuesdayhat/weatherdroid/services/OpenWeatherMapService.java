@@ -23,15 +23,6 @@ public class OpenWeatherMapService {
         OkHttpClient client = new OkHttpClient.Builder()
                 .build();
 
-        //HttpUrl.parse DEBUGGING ---------------------------
-        String baseUrl = Constants.OWM_BASE_URL;
-        HttpUrl test = HttpUrl.parse(baseUrl);
-        if (test == null){
-            Log.d("-=-=-=-=TEST ", "--------TEST RETURNS NULL");
-        } else {
-            Log.d("-=-=-=-=TEST ", test.toString());
-        }
-
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.OWM_LOCATION_QUERY_PARAMETER, location + ",us");
         urlBuilder.addQueryParameter(Constants.OWM_KEY_QUERY_PARAMETER, Constants.OWM_KEY);
@@ -54,7 +45,7 @@ public class OpenWeatherMapService {
         try {
             String jsonData = response.body().string();
             JSONObject openWeatherMapJSON = new JSONObject(jsonData);
-            Log.d("-------OWM JSON ", openWeatherMapJSON.toString());
+//            Log.d("-------OWM JSON ", openWeatherMapJSON.toString());
 
             String summary = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("main");
             String description = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("description");

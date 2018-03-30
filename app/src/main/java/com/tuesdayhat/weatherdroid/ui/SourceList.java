@@ -26,7 +26,7 @@ import butterknife.ButterKnife;
 public class SourceList extends AppCompatActivity {
     public static final String TAG = SourceList.class.getSimpleName();
 
-    @BindView(R.id.sourcesRecyclerView) RecyclerView mRecyclerView;
+    @BindView(R.id.recyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.locationTextView) TextView mLocationTextView;
 
     private WeatherSourceListAdapter mAdapter;
@@ -65,7 +65,8 @@ public class SourceList extends AppCompatActivity {
                         mAdapter = new WeatherSourceListAdapter(getApplicationContext(), sources);
                         mRecyclerView.setAdapter(mAdapter);
 
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SourceList.this);
+                        RecyclerView.LayoutManager layoutManager =
+                                new LinearLayoutManager(SourceList.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
 

@@ -55,14 +55,12 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
         @BindView(R.id.summary) TextView mSummary;
         @BindView(R.id.sourceName) TextView mSourceName;
 
-
         private Context mContext;
 
         public WeatherSourceViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
             mContext=itemView.getContext();
-
             itemView.setOnClickListener(this);
         }
 
