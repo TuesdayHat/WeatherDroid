@@ -38,7 +38,7 @@ public class OpenWeatherMapService {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder(); // fails here, see test above
 //        HttpUrl.Builder urlBuilder = HttpUrl.parse("api.openweathermap.org/data/2.5/weather?q=").newBuilder();
 
-        urlBuilder.addQueryParameter(Constants.LOCATION_QUERY_PARAMETER, location);
+        urlBuilder.addQueryParameter(Constants.LOCATION_QUERY_PARAMETER, location + ",us");
         urlBuilder.addQueryParameter(Constants.OPENWEATHERMAP_KEY_QUERY_PARAMETER, Constants.OPENWEATHERMAP_KEY);
         String url = urlBuilder.build().toString();
 
@@ -58,15 +58,16 @@ public class OpenWeatherMapService {
 
         try {
             String jsonData = response.body().string();
-            JSONObject openWatherMapJSON = new JSONObject(jsonData);
+            JSONObject openWeatherMapJSON = new JSONObject(jsonData);
+            Log.d("-------OWM JSON ", openWeatherMapJSON.toString());
 
-            String summary = openWatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("main");
-            String description = openWatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("description");
-            String location = openWatherMapJSON.getString("name") + ", " + openWatherMapJSON.getJSONObject("sys").getString("country");
-            Double temp = openWatherMapJSON.getJSONObject("main").getDouble("temp");
-            Double max = openWatherMapJSON.getJSONObject("main").getDouble("temp_max");
-            Double min = openWatherMapJSON.getJSONObject("main").getDouble("temp_min");
-            Double humidity = openWatherMapJSON.getJSONObject("main").getDouble("humidity");
+            String summary = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("main");
+            String description = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("description");
+            String location = openWeatherMapJSON.getString("name") + ", " + openWeatherMapJSON.getJSONObject("sys").getString("country");
+            Double temp = openWeatherMapJSON.getJSONObject("main").getDouble("temp");
+            Double max = openWeatherMapJSON.getJSONObject("main").getDouble("temp_max");
+            Double min = openWeatherMapJSON.getJSONObject("main").getDouble("temp_min");
+            Double humidity = openWeatherMapJSON.getJSONObject("main").getDouble("humidity");
 
             WeatherSource weatherSource = new WeatherSource.Builder()
                     .sourceName("Open Weather Map")
