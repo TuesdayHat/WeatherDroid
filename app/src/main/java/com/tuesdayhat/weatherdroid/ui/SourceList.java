@@ -24,6 +24,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SourceList extends AppCompatActivity {
+    public static final String TAG = SourceList.class.getSimpleName();
 
     @BindView(R.id.sourcesRecyclerView) RecyclerView mRecyclerView;
     @BindView(R.id.locationTextView) TextView mLocationTextView;
@@ -41,14 +42,12 @@ public class SourceList extends AppCompatActivity {
         Intent intent = getIntent();
         String location = intent.getStringExtra("location");
         mLocationTextView.append(" " + location);
-//        Log.d("----LOCATION EXTRA: ", location);
 
         getSources(location);
     }
 
     private void getSources(String location){
         final OpenWeatherMapService owmService = new OpenWeatherMapService();
-//        Log.d("----LOCATION ", location);
         owmService.currentWeather(location, new Callback(){
 
             @Override
@@ -69,6 +68,10 @@ public class SourceList extends AppCompatActivity {
                         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SourceList.this);
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
+
+                        for (WeatherSource source: sources){
+                            Log.d(TAG, String.format("-------------SOURCE NAME: %s", source.getSourceName()));
+                        }
                     }
                 });
             }

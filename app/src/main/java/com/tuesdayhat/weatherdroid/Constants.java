@@ -6,4 +6,5 @@ public class Constants {
     public static final String OWM_KEY_QUERY_PARAMETER = "appid";
     public static final String OWM_LOCATION_QUERY_PARAMETER = "q";
     public static final String FIREBASE_CHILD_SEARCHED_LOCATION = "locationHistory";
+    public static final String FIREBASE_CHILD_SOURCE = "WeatherSource";
 }
