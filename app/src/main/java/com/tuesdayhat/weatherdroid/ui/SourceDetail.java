@@ -17,8 +17,8 @@ import butterknife.BindView;
 
 public class SourceDetail extends AppCompatActivity {
 
-
     @BindView(R.id.viewPager) ViewPager mViewPager;
+
     private WeatherSourcePagerAdapter adapterViewPager;
     ArrayList<WeatherSource> mWeatherSources = new ArrayList<>();
 

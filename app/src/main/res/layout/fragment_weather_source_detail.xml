@@ -11,5 +11,102 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            android:paddingBottom="20dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp">
+
+
+            <TextView
+                android:id="@+id/locationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@id/sourceNameTextView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:text="Location" />
+
+            <TextView
+                android:id="@+id/sourceNameTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="source name"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/currTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/sourceNameTextView"
+                android:layout_centerHorizontal="true"
+                android:text="Current Temperature"
+                android:textColor="@color/colorPrimary"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/currHumidity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/currTemp"
+                android:layout_centerHorizontal="true"
+                android:text="Humidity" />
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/currHumidity"
+                android:layout_alignStart="@+id/currHumidity"
+                android:layout_below="@+id/currHumidity"
+                android:layout_marginTop="30dp"
+                android:text="summary" />
+
+            <TextView
+                android:id="@+id/currMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/currMin"
+                android:layout_alignBottom="@+id/currMin"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="todayMax"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/currMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/summary"
+                android:layout_marginTop="52dp"
+                android:text="todayMin"
+                android:textColor="@color/colorPrimary" />
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="Save info" />
+
+            <TextView
+                android:id="@+id/descriptionTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/currMin"
+                android:layout_marginTop="63dp"
+                android:text="Description" />
+        </RelativeLayout>
     </LinearLayout>
+
+
 </FrameLayout>

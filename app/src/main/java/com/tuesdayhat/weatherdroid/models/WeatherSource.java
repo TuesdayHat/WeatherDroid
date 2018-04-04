@@ -12,6 +12,7 @@ public class WeatherSource {
     private String summary;
     private String description;
     private String location;
+    private String timestamp;
 
     public WeatherSource(){}
 
@@ -59,5 +60,6 @@ public class WeatherSource {
     public Double getCurrMax(){return this.currMax;}
     public Double getCurrMin(){return this.currMin;}
     public Double getCurrHumidity(){return this.currHumidity;}
+    public String getTimestamp(){return this.timestamp;}
 
 }
