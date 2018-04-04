@@ -55,6 +55,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
         @BindView(R.id.summary) TextView mSummary;
         @BindView(R.id.sourceName) TextView mSourceName;
 
+
         private Context mContext;
 
         public WeatherSourceViewHolder(View itemView) {
@@ -69,7 +70,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
             int itemPosition = getLayoutPosition();
             Intent intent = new Intent(mContext, SourceDetail.class);
             intent.putExtra("position", itemPosition);
-            intent.putExtra("sources", Parcels.wrap(mWeatherModels));
+            intent.putExtra("weatherSources", Parcels.wrap(mWeatherModels));
             mContext.startActivity(intent);
         }
 

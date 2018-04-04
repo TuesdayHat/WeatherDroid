@@ -3,6 +3,7 @@ package com.tuesdayhat.weatherdroid.ui;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.adapters.WeatherSourcePagerAdapter;
@@ -17,18 +18,19 @@ import butterknife.BindView;
 
 public class SourceDetail extends AppCompatActivity {
 
-    @BindView(R.id.viewPager) ViewPager mViewPager;
-
     private WeatherSourcePagerAdapter adapterViewPager;
     ArrayList<WeatherSource> mWeatherSources = new ArrayList<>();
+
+    @BindView(R.id.viewPager) ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_source_list);
+        setContentView(R.layout.activity_source_detail);
         ButterKnife.bind(this);
 
         mWeatherSources = Parcels.unwrap(getIntent().getParcelableExtra("weatherSources"));
+        Log.d("------LIST OF SOURCES: ", String.format("%s", mWeatherSources));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new WeatherSourcePagerAdapter(getSupportFragmentManager(), mWeatherSources);

@@ -27,15 +27,17 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     @BindView(R.id.currMin) TextView mCurrMin;
     @BindView(R.id.currHumidity) TextView mHumidity;
     @BindView(R.id.summary) TextView mSummary;
-//    @BindView(R.id.description) TextView mDescription; not sure if this is good for anything here
-    @BindView(R.id.location) TextView mLocation;
+    @BindView(R.id.descriptionTextView) TextView mDescription; //not sure if this is good for anything here
+    @BindView(R.id.locationTextView) TextView mLocation;
 
     private WeatherSource mWeatherSource;
 
     public static WeatherSourceDetailFragment newInstance(WeatherSource weatherSource){
         WeatherSourceDetailFragment weatherSourceDetailFragment = new WeatherSourceDetailFragment();
         Bundle args = new Bundle();
+
         args.putParcelable("weatherSource", Parcels.wrap(weatherSource));
+
         weatherSourceDetailFragment.setArguments(args);
         return weatherSourceDetailFragment;
     }
@@ -58,6 +60,7 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
         mCurrMin.setText(mWeatherSource.getCurrMin().toString() + "°");
         mSummary.setText(mWeatherSource.getSummary());
         mLocation.setText(mWeatherSource.getLocation());
+        mDescription.setText(mWeatherSource.getDescription());
 
         return view;
     }

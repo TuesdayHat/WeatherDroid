@@ -50,7 +50,7 @@ public class SourceList extends AppCompatActivity {
 
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mLastLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
-        Log.d("Shared Pref Location: ", mLastLocation + "");
+//        Log.d("Shared Pref Location: ", mLastLocation + "");
         if (mLastLocation != null){
             getSources(mLastLocation);
         }
@@ -84,9 +84,9 @@ public class SourceList extends AppCompatActivity {
                         mRecyclerView.setLayoutManager(layoutManager);
                         mRecyclerView.setHasFixedSize(true);
 
-                        for (WeatherSource source: sources){
-                            Log.d(TAG, String.format("-------------SOURCE NAME: %s", source.getSourceName()));
-                        }
+//                        for (WeatherSource source: sources){
+//                            Log.d(TAG, String.format("-------------SOURCE NAME: %s", source.getSourceName()));
+//                        }
                     }
                 });
             }
