@@ -96,7 +96,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:text="Save info" />
+                android:text="Save info"
+                android:id="@+id/saveReportButton"/>
 
             <TextView
                 android:id="@+id/descriptionTextView"

@@ -13,6 +13,7 @@ public class WeatherSource {
     private String description;
     private String location;
     private String timestamp;
+    private String pushId;
 
     public WeatherSource(){}
 
@@ -61,5 +62,7 @@ public class WeatherSource {
     public Double getCurrMin(){return this.currMin;}
     public Double getCurrHumidity(){return this.currHumidity;}
     public String getTimestamp(){return this.timestamp;}
+    public String getPushId(){return this.pushId;}
+    public void setPushId(String pushId){this.pushId = pushId;}
 
 }

@@ -9,9 +9,15 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.models.*;
 
@@ -29,6 +35,7 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
     @BindView(R.id.summary) TextView mSummary;
     @BindView(R.id.descriptionTextView) TextView mDescription; //not sure if this is good for anything here
     @BindView(R.id.locationTextView) TextView mLocation;
+    @BindView(R.id.saveReportButton) Button mSaveReportButton;
 
     private WeatherSource mWeatherSource;
 
@@ -67,6 +74,14 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
 
     @Override
     public void onClick(View v){
-        //undecided whether this should send the user to the weather source's website on its own. Leaving the framework just in case.
+        if(v == mSaveReportButton){
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String uid = user.getUid();
+
+            DatabaseReference restaurantRef = FirebaseDatabase
+                    .getInstance()
+                    .getReference(Constants.FIREBASE_CHILD_SAVED_REPORT)
+                    .child(uid);
+        }
     }
 }
