@@ -55,9 +55,9 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
 
         mSourceName.setText(mWeatherSource.getSourceName());
         mCurrTemp.setText(mWeatherSource.getCurrTemp().toString() + "°");//note that Open Weather Map returns temp in Kelvins
-        mHumidity.setText(mWeatherSource.getCurrHumidity().toString()+"%");
-        mCurrMax.setText(mWeatherSource.getCurrMax().toString() + "°");
-        mCurrMin.setText(mWeatherSource.getCurrMin().toString() + "°");
+        mHumidity.setText(String.format("Humidity: %s", mWeatherSource.getCurrHumidity().toString() + "%"));
+        mCurrMax.setText(String.format("Max: %s °", mWeatherSource.getCurrMax().toString()));
+        mCurrMin.setText(String.format("Min: %s °", mWeatherSource.getCurrMin().toString()));
         mSummary.setText(mWeatherSource.getSummary());
         mLocation.setText(mWeatherSource.getLocation());
         mDescription.setText(mWeatherSource.getDescription());

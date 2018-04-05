@@ -3,11 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/WeatherDroid.iml" filepath="$PROJECT_DIR$/WeatherDroid.iml" />
-      <module fileurl="file://$PROJECT_DIR$/WeatherDroid.iml" filepath="$PROJECT_DIR$/WeatherDroid.iml" />
       <module fileurl="file://C:\Users\Adam\Desktop\WeatherDroid\WeatherDroid.iml" filepath="C:\Users\Adam\Desktop\WeatherDroid\WeatherDroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\Adam\Desktop\WeatherDroid\app\app.iml" filepath="C:\Users\Adam\Desktop\WeatherDroid\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

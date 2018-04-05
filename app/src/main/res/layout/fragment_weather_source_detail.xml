@@ -76,7 +76,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
                 android:text="todayMax"
-                android:textColor="@color/colorAccent" />
+                android:textColor="@color/colorAccent"
+                android:textSize="20dp"/>
 
             <TextView
                 android:id="@+id/currMin"
@@ -87,7 +88,8 @@
                 android:layout_below="@+id/summary"
                 android:layout_marginTop="52dp"
                 android:text="todayMin"
-                android:textColor="@color/colorPrimary" />
+                android:textColor="@color/colorPrimary"
+                android:textSize="20dp"/>
 
 
             <Button
