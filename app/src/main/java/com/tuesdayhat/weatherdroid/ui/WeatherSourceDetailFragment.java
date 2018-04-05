@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,6 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.models.*;
+import java.time.Instant;
 
 import org.parceler.Parcels;
 
@@ -78,10 +80,19 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
             FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
             String uid = user.getUid();
 
-            DatabaseReference restaurantRef = FirebaseDatabase
+            DatabaseReference WeatherSourceRef = FirebaseDatabase
                     .getInstance()
                     .getReference(Constants.FIREBASE_CHILD_SAVED_REPORT)
                     .child(uid);
+
+
+            DatabaseReference pushRef = WeatherSourceRef.push();
+            String pushId = pushRef.getKey();
+            mWeatherSource.setPushId(pushId);
+            pushRef.setValue(mWeatherSource);
+
+            Toast.makeText(getContext(), "Saved", Toast.LENGTH_SHORT).show();
+
         }
     }
 }
