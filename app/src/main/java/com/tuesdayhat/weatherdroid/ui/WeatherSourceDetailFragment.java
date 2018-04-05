@@ -63,14 +63,16 @@ public class WeatherSourceDetailFragment extends Fragment implements View.OnClic
         ButterKnife.bind(this, view);
 
         mSourceName.setText(mWeatherSource.getSourceName());
-        mCurrTemp.setText(mWeatherSource.getCurrTemp().toString() + "°");//note that Open Weather Map returns temp in Kelvins
-        mHumidity.setText(String.format("Humidity: %s", mWeatherSource.getCurrHumidity().toString() + "%"));
-        mCurrMax.setText(String.format("Max: %s °", mWeatherSource.getCurrMax().toString()));
-        mCurrMin.setText(String.format("Min: %s °", mWeatherSource.getCurrMin().toString()));
+        mCurrTemp.setText(String.format("%s °",mWeatherSource.getCurrTemp() + "°"));//note that Open Weather Map returns temp in Kelvins
+        mHumidity.setText(String.format("Humidity: %s", mWeatherSource.getCurrHumidity() + "%"));
+        mCurrMax.setText(String.format("Max: %s °", mWeatherSource.getCurrMax()));
+        mCurrMin.setText(String.format("Min: %s °", mWeatherSource.getCurrMin()));
         mSummary.setText(mWeatherSource.getSummary());
         mLocation.setText(mWeatherSource.getLocation());
         mDescription.setText(mWeatherSource.getDescription());
 
+
+        mSaveReportButton.setOnClickListener(this);
         return view;
     }
 

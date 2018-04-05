@@ -10,6 +10,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -64,6 +65,7 @@ public class OpenWeatherMapService {
                     .currMax(max)
                     .currMin(min)
                     .currHumidity(humidity)
+                    .timestamp(Calendar.getInstance().getTime()+"")
                     .build();
 
             weatherSources.add(weatherSource);

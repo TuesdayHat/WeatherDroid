@@ -19,9 +19,7 @@ public class WeatherSource {
     private String timestamp;
     private String pushId;
 
-    public WeatherSource(){
-        this.timestamp = Calendar.getInstance().getTime() + "";
-    }
+    public WeatherSource(){}
 
     //Made as a builder to account for possibly differing response formats
     public static class Builder {
@@ -33,6 +31,7 @@ public class WeatherSource {
         private String summary;
         private String description;
         private String location;
+        private String timestamp;
 
         public Builder sourceName(String sourceName){this.sourceName = sourceName; return this;}
         public Builder summary(String summary){this.summary = summary; return this;}
@@ -42,6 +41,7 @@ public class WeatherSource {
         public Builder currMax(Double currMax){this.currMax = currMax; return this;}
         public Builder currMin(Double currMin){this.currMin = currMin; return this;}
         public Builder currHumidity(Double currHumidity){this.currHumidity = currHumidity; return this;}
+        public Builder timestamp(String timestamp){this.timestamp = timestamp; return this;}
 
         public WeatherSource build(){
             return new WeatherSource(this);
@@ -57,6 +57,7 @@ public class WeatherSource {
         this.currMax = builder.currMax;
         this.currMin = builder.currMin;
         this.currHumidity = builder.currHumidity;
+        this.timestamp = builder.timestamp;
     }
 
     public String getSourceName(){return this.sourceName;}

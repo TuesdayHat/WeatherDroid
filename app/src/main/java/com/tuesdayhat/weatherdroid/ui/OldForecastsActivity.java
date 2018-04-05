@@ -28,7 +28,7 @@ public class OldForecastsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_old_forecasts);
+        setContentView(R.layout.activity_source_list);
         ButterKnife.bind(this);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
