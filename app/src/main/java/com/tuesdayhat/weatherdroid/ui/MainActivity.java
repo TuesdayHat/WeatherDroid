@@ -71,8 +71,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         } else if (v == mWeatherButton){
             String location = mWeatherLocationInput.getText().toString();
 
-            if (location.length() > 0){
-                addToSharedPreferences(location);
+            if (mSharedPreferences != null){
+                if(location.length() > 0){
+                    addToSharedPreferences(location);
+                }
                 Intent intent = new Intent(MainActivity.this, SourceList.class);
                 intent.putExtra("location", location);
                 startActivity(intent);
