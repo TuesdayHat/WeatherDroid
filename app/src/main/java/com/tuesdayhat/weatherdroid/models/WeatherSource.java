@@ -2,10 +2,6 @@ package com.tuesdayhat.weatherdroid.models;
 
 import org.parceler.Parcel;
 
-import java.time.Instant;
-import java.util.Calendar;
-import java.util.Date;
-
 @Parcel
 public class WeatherSource {
     private String sourceName;

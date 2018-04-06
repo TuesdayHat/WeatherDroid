@@ -21,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.tuesdayhat.weatherdroid.Constants;
 import com.tuesdayhat.weatherdroid.R;
 import com.tuesdayhat.weatherdroid.models.*;
-import java.time.Instant;
 
 import org.parceler.Parcels;
 
