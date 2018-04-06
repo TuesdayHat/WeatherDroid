@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mEditor = mSharedPreferences.edit();
 
 
-//        mWeatherLocationInput.setText(Constants.PREFERENCES_LOCATION_KEY, null);
+        mWeatherLocationInput.setHint(String.format("%s", mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null)));
 
         mAboutButton.setOnClickListener(this);
         mWeatherButton.setOnClickListener(this);
