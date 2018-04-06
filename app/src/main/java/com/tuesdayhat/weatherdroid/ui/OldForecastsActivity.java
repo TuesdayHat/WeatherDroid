@@ -36,7 +36,7 @@ public class OldForecastsActivity extends AppCompatActivity implements OnStartDr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_source_list);
+        setContentView(R.layout.activity_old_forecasts);
         ButterKnife.bind(this);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

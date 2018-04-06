@@ -85,7 +85,7 @@ public class FirebaseWeatherSourceListAdapter extends FirebaseRecyclerAdapter<We
             public void onClick(View v){
                 Intent intent = new Intent(mContext, SourceDetail.class);
                 intent.putExtra("position", viewHolder.getAdapterPosition());
-                intent.putExtra("sources", Parcels.wrap(mSources));
+                intent.putExtra("weatherSources", Parcels.wrap(mSources));
                 mContext.startActivity(intent);
             }
         });
