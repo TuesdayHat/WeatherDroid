@@ -18,6 +18,7 @@ public class WeatherSource {
     private String location;
     private String timestamp;
     private String pushId;
+    String index;
 
     public WeatherSource(){}
 
@@ -32,6 +33,7 @@ public class WeatherSource {
         private String description;
         private String location;
         private String timestamp;
+
 
         public Builder sourceName(String sourceName){this.sourceName = sourceName; return this;}
         public Builder summary(String summary){this.summary = summary; return this;}
@@ -58,6 +60,7 @@ public class WeatherSource {
         this.currMin = builder.currMin;
         this.currHumidity = builder.currHumidity;
         this.timestamp = builder.timestamp;
+        this.index = "none_set";
     }
 
     public String getSourceName(){return this.sourceName;}
@@ -71,5 +74,7 @@ public class WeatherSource {
     public String getTimestamp(){return this.timestamp;}
     public String getPushId(){return this.pushId;}
     public void setPushId(String pushId){this.pushId = pushId;}
+    public String getIndex() {return index;}
+    public void setIndex(String index) {this.index = index;}
 
 }

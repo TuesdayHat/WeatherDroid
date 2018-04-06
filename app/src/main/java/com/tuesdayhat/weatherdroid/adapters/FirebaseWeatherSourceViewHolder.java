@@ -29,7 +29,7 @@ public class FirebaseWeatherSourceViewHolder extends RecyclerView.ViewHolder imp
         super(itemView);
         mView = itemView;
         mContext = itemView.getContext();
-        itemView.setOnClickListener(this);
+//        itemView.setOnClickListener(this);
     }
 
     public void bindWeatherSource(WeatherSource source){

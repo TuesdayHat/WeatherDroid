@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @BindView(R.id.aboutButton) Button mAboutButton;
     @BindView(R.id.weatherLocationInput) EditText mWeatherLocationInput;
     @BindView(R.id.appTitle) TextView mAppTitle;
+    @BindView(R.id.OldReportsButton) Button mOldReports;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mAboutButton.setOnClickListener(this);
         mWeatherButton.setOnClickListener(this);
+        mOldReports.setOnClickListener(this);
     }
 
     @Override
@@ -76,6 +78,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
             }
 
+        } else if (v == mOldReports){
+            Intent intent = new Intent(MainActivity.this, OldForecastsActivity.class);
+            startActivity(intent);
         }
     }
 

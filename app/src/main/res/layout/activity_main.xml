@@ -38,9 +38,12 @@
         android:id="@+id/aboutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"/>
+        android:layout_alignLeft="@+id/weatherLocationInput"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/weatherLocationInput"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:text="About" />
 
     <EditText
         android:id="@+id/weatherLocationInput"
@@ -53,5 +56,14 @@
         android:background="@color/colorTextBox"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/OldReportsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/weatherLocationInput"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/weatherLocationInput"
+        android:text="Old Reports" />
 
 </RelativeLayout>
