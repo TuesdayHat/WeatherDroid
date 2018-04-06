@@ -30,7 +30,7 @@ public class SourceDetail extends AppCompatActivity {
         ButterKnife.bind(this);
 
         mWeatherSources = Parcels.unwrap(getIntent().getParcelableExtra("weatherSources"));
-        Log.d("------LIST OF SOURCES: ", String.format("%s", mWeatherSources));
+        Log.d("------SOURCE DETAIL: ", String.format("%s", mWeatherSources));
         int startingPosition = getIntent().getIntExtra("position", 0);
 
         adapterViewPager = new WeatherSourcePagerAdapter(getSupportFragmentManager(), mWeatherSources);

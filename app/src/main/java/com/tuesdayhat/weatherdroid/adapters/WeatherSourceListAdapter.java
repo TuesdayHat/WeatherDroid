@@ -54,6 +54,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
         @BindView(R.id.currHumidity) TextView mCurrHumidity;
         @BindView(R.id.summary) TextView mSummary;
         @BindView(R.id.sourceName) TextView mSourceName;
+//        @BindView(R.id.locationTextView) TextView mLocation;
 
 
         private Context mContext;
@@ -75,7 +76,6 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
         }
 
         public void bindSource(WeatherSource source){
-            //TODO: work out what needs to go onto every member of the list of weather sources.
             mSourceName.setText(source.getSourceName());
             mCurrTemp.setText(String.format("%s °", source.getCurrTemp()));
             mCurrMax.setText(String.format("%s °", source.getCurrMax()));

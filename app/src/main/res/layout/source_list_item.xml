@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@color/colorBackground">
 
 
@@ -11,69 +11,70 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/location"/>
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="#ffffff"
+        android:orientation="vertical"
         android:padding="10dp">
 
         <TextView
+            android:id="@+id/sourceName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/sourceName"
-            android:textSize="12sp"
-            android:textColor="@color/colorPrimary"
             android:text="Source"
-            />
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
+                android:id="@+id/currTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
                 android:text="Current Temperature"
                 android:textColor="@color/colorPrimary"
-                android:textStyle="bold"
                 android:textSize="30sp"
-                android:id="@+id/currTemp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"/>
+                android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/currHumidity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Humidity"
                 android:layout_below="@+id/currTemp"
                 android:layout_centerHorizontal="true"
-                android:id="@+id/currHumidity"
-                />
+                android:text="Humidity" />
 
             <TextView
+                android:id="@+id/summary"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/currHumidity"
                 android:layout_centerHorizontal="true"
-                android:text="summary"
-                android:id="@+id/summary"/>
+                android:text="summary" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="todayMax"
-                android:textColor="@color/colorAccent"
                 android:id="@+id/currMax"
-                android:layout_below="@+id/currHumidity"
-                android:layout_alignParentRight="true"/>
-            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="todayMin"
-                android:textColor="@color/colorPrimary"
-                android:id="@+id/currMin"
+                android:layout_alignParentRight="true"
                 android:layout_below="@+id/currHumidity"
-                android:layout_alignParentLeft="true"/>
+                android:text="todayMax"
+                android:textColor="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/currMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/currHumidity"
+                android:text="todayMin"
+                android:textColor="@color/colorPrimary" />
         </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

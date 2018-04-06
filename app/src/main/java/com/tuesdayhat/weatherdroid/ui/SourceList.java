@@ -51,9 +51,9 @@ public class SourceList extends AppCompatActivity {
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         mLastLocation = mSharedPreferences.getString(Constants.PREFERENCES_LOCATION_KEY, null);
 //        Log.d("Shared Pref Location: ", mLastLocation + "");
-        if (mLastLocation != null){
-            getSources(mLastLocation);
-        }
+//        if (mLastLocation != null){
+//            getSources(mLastLocation);
+//        }
 
         mLocationTextView.append(" " + mLastLocation);
 

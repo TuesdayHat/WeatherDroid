@@ -39,6 +39,7 @@ public class FirebaseWeatherSourceViewHolder extends RecyclerView.ViewHolder imp
         TextView currMinTextView = (TextView) mView.findViewById(R.id.currMin);
         TextView currHumidityTextView = (TextView) mView.findViewById(R.id.currHumidity);
         TextView summaryTextView = (TextView) mView.findViewById(R.id.summary);
+        TextView locationTextView = (TextView) mView.findViewById(R.id.locationTextView);
 
         sourceNameTextView.setText(source.getSourceName());
         currTempTextView.setText(String.format("%s °", source.getCurrTemp()));
