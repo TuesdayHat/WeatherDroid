@@ -2,6 +2,7 @@ package com.tuesdayhat.weatherdroid.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +58,7 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
 //        @BindView(R.id.locationTextView) TextView mLocation;
 
 
+
         private Context mContext;
 
         public WeatherSourceViewHolder(View itemView) {
@@ -64,6 +66,8 @@ public class WeatherSourceListAdapter extends RecyclerView.Adapter<WeatherSource
             ButterKnife.bind(this, itemView);
             mContext=itemView.getContext();
             itemView.setOnClickListener(this);
+
+
         }
 
         @Override
