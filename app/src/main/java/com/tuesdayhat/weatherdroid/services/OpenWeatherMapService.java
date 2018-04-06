@@ -27,9 +27,7 @@ public class OpenWeatherMapService {
         HttpUrl.Builder urlBuilder = HttpUrl.parse(Constants.OWM_BASE_URL).newBuilder();
         urlBuilder.addQueryParameter(Constants.OWM_LOCATION_QUERY_PARAMETER, location + ",us");
         urlBuilder.addQueryParameter(Constants.OWM_KEY_QUERY_PARAMETER, Constants.OWM_KEY);
-        String url = urlBuilder.build().toString();
-
-        Log.d("----------REQUEST URL ", url);
+        String url = urlBuilder.build().toString();;
 
         Request request = new Request.Builder()
                 .url(url)
@@ -46,7 +44,6 @@ public class OpenWeatherMapService {
         try {
             String jsonData = response.body().string();
             JSONObject openWeatherMapJSON = new JSONObject(jsonData);
-//            Log.d("-------OWM JSON ", openWeatherMapJSON.toString());
 
             String summary = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("main");
             String description = openWeatherMapJSON.getJSONArray("weather").getJSONObject(0).getString("description");
