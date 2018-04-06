@@ -2,6 +2,7 @@ package com.tuesdayhat.weatherdroid.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v4.view.MotionEventCompat;
 import android.view.MotionEvent;
 import android.view.View;
@@ -30,6 +31,7 @@ public class FirebaseWeatherSourceListAdapter extends FirebaseRecyclerAdapter<We
 
     private ChildEventListener mChildEventListener;
     private ArrayList<WeatherSource> mSources = new ArrayList<>();
+
 
 
     public FirebaseWeatherSourceListAdapter (Class<WeatherSource> modelClass, int modelLayout, Class<FirebaseWeatherSourceViewHolder> viewHolderClass, Query ref, OnStartDragListener onStartDragListener, Context context) {
@@ -79,6 +81,7 @@ public class FirebaseWeatherSourceListAdapter extends FirebaseRecyclerAdapter<We
                 return false;
             }
         });
+
 
         viewHolder.itemView.setOnClickListener(new View.OnClickListener(){
             @Override
