@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.tuesdayhat.weatherdroid.ui.CreateAccountActivity"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorBackground">
 
     <!--TODO: change layout-->
     <LinearLayout
@@ -21,11 +21,11 @@
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:background="@android:color/white"
             android:hint="Name"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -33,12 +33,12 @@
             android:id="@+id/emailEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
             android:background="@android:color/white"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:nextFocusDown="@+id/passwordEditText"
             android:padding="10dp"
-            android:layout_marginBottom="10dp"
             android:textColor="@android:color/black"
             android:textSize="20sp" />
 
@@ -71,34 +71,27 @@
 
         <Button
             android:id="@+id/createUserButton"
-            android:layout_width="match_parent"
+            android:layout_width="265dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:background="@color/colorPrimary"
+            android:layout_gravity="center_horizontal"
             android:padding="10dp"
             android:text="Sign up"
-            android:background="@color/colorAccent"
-            android:layout_marginTop="15dp"
             android:textColor="@color/colorTextIcons" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorTextIcons"
-            android:textStyle="bold"
-            android:textSize="15sp"
-            android:text="Already have an account? Log in here!"
-            android:id="@+id/loginTextView"
-            android:layout_gravity="center_horizontal" />
 
     </LinearLayout>
 
     <TextView
+        android:id="@+id/loginTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Already have an account? Log in here!"
+        android:textColor="@color/colorTextIcons"
+        android:textSize="15sp"
         android:textStyle="bold"
-        android:layout_above="@+id/linearLayout"
-        android:layout_centerHorizontal="true" />
+        />
 
 </RelativeLayout>
